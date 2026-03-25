@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://w6i3tcts3ur3"]
+
+[ext_resource type="Script" uid="uid://cy72s1t1ah1rq" path="res://main.gd" id="1_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://dk3wrwnbem6ei" path="res://Ball.tscn" id="2_r0du0"]
+[ext_resource type="Script" uid="uid://dfkgbvtdjvp8v" path="res://detector.gd" id="3_r0du0"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r0du0"]
+size = Vector2(10, 10)
+
+[node name="Node3D" type="Node3D" unique_id=971063182]
+script = ExtResource("1_uu6xs")
+ball_scene = ExtResource("2_r0du0")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1066038264]
+transform = Transform3D(0.70710677, -0.4055798, 0.579228, 0, 0.81915206, 0.57357645, -0.70710677, -0.4055798, 0.579228, 80, 60, 80)
+fov = 42.5
+size = 0.001
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=457192128]
+transform = Transform3D(0.99903506, -0.007028901, 0.043352995, -0.033124678, 0.5275673, 0.84886724, -0.028838225, -0.84948415, 0.5268254, 0, 15.920731, 0)
+light_energy = 1.5
+
+[node name="Detector" type="MeshInstance3D" parent="." unique_id=2141559115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023403645, -14.149017, 0.081792116)
+mesh = SubResource("PlaneMesh_r0du0")
+script = ExtResource("3_r0du0")
