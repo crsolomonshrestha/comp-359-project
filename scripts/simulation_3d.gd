@@ -37,7 +37,6 @@ func _ready() -> void:
 	_setup_ui()
 	_setup_shared_mesh()
 	_setup_simulation()
-	add_child(naive)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
@@ -51,8 +50,8 @@ func _process(delta: float) -> void:
 
 	print_timer += delta
 	if print_timer >= print_interval:
-	    print_timer = 0.0
-	    print(
+		print_timer = 0.0
+		print(
 	        "Entities: ", entity_count,
 	        " | Mode: ", ("Spatial" if use_spatial else "Naive"),
 	        " | Query(ms): ", query_time_ms,
@@ -246,7 +245,7 @@ func _update_ui() -> void:
 		entity_count,
 		collision_pair_count,
 		broadphase_candidate_count,
-		query_time_ms
+		query_time_ms,
 		"Spatial" if use_spatial else "Naive"
 	]
 
