@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ubpx5h36qu87"]
+
+[ext_resource type="Script" uid="uid://cfonpv32qx8h2" path="res://scripts/test_spatial_hash_grid.gd" id="1_37kl0"]
+
+[node name="test" type="Node" unique_id=359522222]
+script = ExtResource("1_37kl0")

@@ -122,12 +122,11 @@ func _setup_shared_mesh() -> void:
 	multi_mesh_instance.multimesh = multi_mesh
 	add_child(multi_mesh_instance)
 
-func _setup_camera() -> void:
-	var camera := Camera3D.new()
-	camera.position = Vector3(0.0, world_size * 0.9, world_size * 2.2)
+func _setup_camera():
+	var camera = Camera3D.new()
+	camera.set_script(preload("res://scripts/orbit_camera.gd"))
 	add_child(camera)
-	camera.look_at(Vector3.ZERO, Vector3.UP)
-	camera.fov = 60.0
+	camera.current = true
 
 func _setup_environment() -> void:
 	var world_environment := WorldEnvironment.new()
