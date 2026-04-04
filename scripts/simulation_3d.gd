@@ -40,7 +40,6 @@ var mode := 0
 func _ready() -> void:
     randomize()
     _setup_environment()
-    _setup_camera()
     _setup_ui()
     _setup_shared_mesh()
     _setup_simulation()
@@ -197,11 +196,10 @@ func _setup_shared_mesh() -> void:
     multi_mesh_instance.multimesh = multi_mesh
     add_child(multi_mesh_instance)
 
-func _setup_camera():
-	var camera = Camera3D.new()
-	camera.set_script(preload("res://scripts/orbit_camera.gd"))
-	add_child(camera)
-	camera.current = true
+    var camera = Camera3D.new()
+    camera.set_script(preload("res://scripts/orbit_camera.gd"))
+    add_child(camera)
+    camera.current = true
 
 func _setup_environment() -> void:
     var world_environment := WorldEnvironment.new()
